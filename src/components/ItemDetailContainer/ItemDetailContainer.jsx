@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ItemDetail from '../ItemDetail.jsx/ItemDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import { getItems } from '../Items/store'
 
 function ItemDetailContainer() {

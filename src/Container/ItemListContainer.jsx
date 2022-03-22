@@ -51,9 +51,6 @@ return (
         </Card>
         </CardGroup>
 
-    <div>
-        <ItemDetailContainer/>
-    </div>
     </div>
     
 

@@ -9,9 +9,11 @@ function ItemDetail({producto}) {
     <div>
         <Card style={{backgroundColor: 'darkgray'}}>
             <Card.Img variant="top" src={adidas}/>
-            <p>{producto.title}</p>
-            <p>{producto.description}</p>
-            <p>{producto.price}</p>
+            <Card.Body>
+              <p>{producto.title}</p>
+              <p>{producto.description}</p>
+              <p>{producto.price}</p>
+            </Card.Body>
         </Card>
 
     </div>
