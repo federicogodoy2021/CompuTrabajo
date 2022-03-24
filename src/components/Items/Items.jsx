@@ -1,21 +1,38 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card, CardGroup } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import BuyButton from '../BuyButton/BuyButton'
+import ItemCount from '../ItemCount/ItemCount'
 
 function Items({producto}) {
 
   return (
     <div>
-        <Card.Footer>
-            <div>
-                
-                <div titulo = {producto.title}>{`${producto.title}`}</div>
-                <div reseña = {producto.description}>{`${producto.description}`}</div>
-                <div costo = {producto.price}>{`${producto.price}`}</div>
-
+      <CardGroup>
+        <Card style={{backgroundColor: 'darkgray', display:'flex', alignItems: 'center'}}>
+          <Card.Img style={{width:300, height:300}} variant="top" src={producto.foto}/>
+          <Card.Footer>
+            <Link to={`detalle/${producto.id}`} style={{display:'flex',flexDirection: 'column', alignItems: 'center'}}>
+              <div>
+                <div>{`${producto.title}`}</div>
+                <div>{`${producto.description}`}</div>
+                <div>{`${producto.price}`}</div>
+              </div>
+              <br/>
+              <div>
+                <Button variant="success" /* onClick = {()=>{}} */ > Detalle del producto</Button>
+              </div>
+              <br/>
+            </Link>
+            <div style= {{display:'flex',flexDirection: 'column', alignItems: 'center'}}>
+              <ItemCount stock={producto.stock} initial={1}/>
+              <br/>
+              <BuyButton/>
             </div>
-        </Card.Footer>
-        <BuyButton/>          
+          </Card.Footer>
+        </Card>
+      </CardGroup> 
+
 
 
     </div>
