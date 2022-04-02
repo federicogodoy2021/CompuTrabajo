@@ -1,12 +1,12 @@
 import React from 'react'
+import cart from '../../../imgs/cart.png'
 
-
-function Widget() {
+function CartWidget() {
   return (
     <>
         <img
              //className="d-block w-100"
-             src="https://cdn.icon-icons.com/icons2/1097/PNG/512/1485477061-cart_78585.png"
+             src= {`${cart}`}
              alt="carrito"
              style={{ height:'42px', width: '42px' }}
 
@@ -15,4 +15,4 @@ function Widget() {
   )
 }
 
-export default Widget
+export default CartWidget
