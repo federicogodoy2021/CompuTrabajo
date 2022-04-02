@@ -2,21 +2,20 @@ import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './Container/ItemListContainer';
+import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
+import {CartContextProvider} from './context/CartContext';
 
 
 function App() {
 
   return (
-    <>
-    <BrowserRouter>
-        <div className="App">
-          <header className="App-header">
-            <NavBar/>
-          </header>
-        </div>
+<>
+  <BrowserRouter>
+    <CartContextProvider >
+      <div className="App">
+       <NavBar/>
         <Routes>  
           <Route 
             path="/" 
@@ -32,8 +31,10 @@ function App() {
               path="/cart" 
               element={<Cart/>}/> 
         </Routes>
-    </BrowserRouter>
-    </>
+      </div>
+    </CartContextProvider>
+  </BrowserRouter>
+</>
         
   );
 }
