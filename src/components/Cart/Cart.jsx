@@ -1,16 +1,12 @@
-import React from 'react'
 import { useCartContext } from '../../context/CartContext'
-import { Badge, Button, ListGroup } from 'react-bootstrap'
+import { Badge, ListGroup, Button } from 'react-bootstrap'
+import EmptyCartButton from './EmptyCartButton';
+import LegendsInCart from './LegendsInCart';
+import './Cart.css'
 
 function Cart() {
 
-  const {cartList, emptyCart} = useCartContext()
-console.log(cartList)
-/*   const montoTotal = cartlist.map(total => 
-  return(
-    for(i = cartList[0].cantidad; i<total.length; i++){
-      console.log(total)
-})) */
+  const {cartList,removeItems} = useCartContext()
 
 
 
@@ -26,45 +22,26 @@ console.log(cartList)
             <div className="ms-2 me-auto">
               <div className="fw-bold">
                 <h1>{prod.title}</h1>
+                <h3>{prod.description}</h3>
               </div>
               <h3>Precio:{`$${(prod.price * prod.cantidad)}.-`}</h3>
             </div>
             <Badge bg="primary" pill>
-              <h2>Unidades: {prod.cantidad}</h2>
+              <div className='qtyOfItems'>
+                <h2>Unidades: {prod.cantidad}</h2>
+                <Button className='botonEliminar' onClick={()=>removeItems(prod.id)}>Eliminar</Button>
+              </div>
             </Badge>
           </ListGroup.Item>
         </ListGroup>
-
-        <div>
-          <h1>Total de la compra: {prod.cantidad}</h1>
-        </div>
       </div>)}
+      <div>
+        <LegendsInCart/>
+      </div>
 
-      <br/>
-      <Button onClick={emptyCart}>Vaciar Cart</Button>
+      <EmptyCartButton/>
     </div>
-  )
+)
 }
 
-
-
 export default Cart
-
-/* {cartList.map(prod => 
-  <div>
-    <ListGroup key= {prod.id} as="ol" numbered>
-      <ListGroup.Item
-        as="li"
-        className="d-flex justify-content-between align-items-start">
-        <div className="ms-2 me-auto">
-          <div className="fw-bold">{prod.title}</div>
-          <h3>Precio: {prod.price}</h3>
-        </div>
-        <Badge bg="primary" pill>
-          {prod.cantidad}
-        </Badge>
-      </ListGroup.Item>
-    </ListGroup>
-    <br/>
-    <Button onClick={emptyCart}>Vaciar Cart</Button>
-  </div> */

@@ -6,7 +6,7 @@ function BuyButton() {
 /*   console.log(count) */
   return (
     <div>
-        <Button variant="success" /* onClick = {()=> */> Añadir al carrito</Button>
+        <Button variant="success" > Añadir al carrito</Button>
     </div>
   )
 }
