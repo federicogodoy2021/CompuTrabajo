@@ -1,4 +1,4 @@
-import adidas from "../../imgs/adidas.jpg"
+/* import adidas from "../../imgs/adidas.jpg"
 import nike from "../../imgs/nike.jpg"
 import reebok from "../../imgs/reebok.jpg"
 
@@ -25,4 +25,4 @@ import reebok from "../../imgs/reebok.jpg"
         
         })
 
-    export default stock
+    export default stock */
