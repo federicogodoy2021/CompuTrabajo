@@ -7,7 +7,6 @@ import {useCartContext} from '../../context/CartContext'
 
 function ItemDetail({producto}) {
 
-  //Uso de datos importados por context
   const {addToCart} = useCartContext()
   
 
@@ -15,7 +14,6 @@ function ItemDetail({producto}) {
     setOnButton('on')
     addToCart({...producto, cantidad: cantidad})
 }
-
 
   const [onButton, setOnButton] = useState('button')
 
