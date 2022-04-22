@@ -51,7 +51,6 @@ await addDoc(queryCollectionOrders, order)
     .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
       stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad})))
     .catch(error => console.log(error))
-    .finally(() => console.log('Stock actualizado'))
     
     batch.commit()
 }
